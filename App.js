@@ -1,12 +1,15 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
+import "react-native-gesture-handler";
+import {StyleSheet} from "react-native";
+import {NavigationContainer} from "@react-navigation/native";
+import StackNavigator from "./src/navigation/StackNavigator";
+import {useState} from "react";
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <View style={styles.container}>
-      <Text>Welcome to my app called Incir!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StackNavigator isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+    </NavigationContainer>
   );
 }
 
