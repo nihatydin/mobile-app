@@ -1,2 +1,2 @@
 My app name is Incir.
-Taking notes, reminders, alarms and more.
+A movie finder app designed for movie research.
