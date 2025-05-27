@@ -1,4 +1,3 @@
-import React from "react";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
@@ -10,7 +9,7 @@ import Feather from "@expo/vector-icons/Feather";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function TabNavigator() {
+function TabNavigator({setIsLoggedIn}) {
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -25,7 +24,7 @@ function TabNavigator() {
 
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        children={() => <SettingsScreen setIsLoggedIn={setIsLoggedIn} />}
         options={{
           tabBarIcon: ({color, size}) => (
             <Feather name="settings" size={size} color={color} />
@@ -44,7 +43,9 @@ export default function StackNavigator({isLoggedIn, setIsLoggedIn}) {
           {() => <LoginScreen setIsLoggedIn={setIsLoggedIn} />}
         </Stack.Screen>
       ) : (
-        <Stack.Screen name="MainTabs" component={TabNavigator} />
+        <Stack.Screen name="MainTabs">
+          {() => <TabNavigator setIsLoggedIn={setIsLoggedIn} />}
+        </Stack.Screen>
       )}
     </Stack.Navigator>
   );
