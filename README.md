@@ -1,2 +1,2 @@
-My app name is Incir.
-A movie finder app designed for movie research.
+My app name is GameX.
+Discovery and recommendation app for gamers. Find the best games and start playing right away!
