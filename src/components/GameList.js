@@ -41,9 +41,10 @@ const GameList = ({navigation}) => {
             <TouchableOpacity
               style={styles.card}
               activeOpacity={0.8}
-              onPress={() =>
-                navigation.navigate("GameDetail", {gameId: item.id})
-              }
+              onPress={() => {
+                navigation.navigate("GameDetail", {gameId: item.id});
+                setSearchTerm("");
+              }}
             >
               {item.background_image && (
                 <Image
