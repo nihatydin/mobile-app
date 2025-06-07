@@ -18,8 +18,8 @@ When you open the app, you will first see an introductory screen. Then you can v
 ## Installation
 
 ```bash
-git clone https://github.com/kullanici-adi/game-explorer-app.git
-cd game-explorer-app
+git clone https://github.com/nihatydin/mobile-app.git
+cd mobile-app
 npm install
 npx expo start
 ```
